@@ -7,13 +7,13 @@
     - объявите метод `set_engine`, который принимает в себя экземпляр объекта `Engine` и устанавливает на текущий экземпляр `Car`
 """
 
-from base import Vehicle
-from engine import Engine
+from OtusPyBasic.homework_02.base import Vehicle
+from OtusPyBasic.homework_02.engine import Engine
 
 
 class Car(Vehicle):
 
-    def __init__(self, weight, fuel, fuel_consumption):
+    def __init__(self, weight=10, fuel=10, fuel_consumption=5):
         super(Car, self).__init__(weight, fuel, fuel_consumption)
         self.engine = Engine
 
@@ -23,10 +23,10 @@ class Car(Vehicle):
 
 
 def main():
-    c1 = Car(10, 10, 5)
+    c1 = Car()
     print(c1)
 
-    engine = Engine(2.0, 4)
+    engine = Engine(volume=2.0, pistons=4)
     c1.set_engine(engine)
 
 

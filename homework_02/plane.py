@@ -8,37 +8,34 @@
     - объявите метод `remove_all_cargo`, который обнуляет значение `cargo` и возвращает значение `cargo`, которое было до обнуления
 """
 
-from base import Vehicle
+from OtusPyBasic.homework_02.base import Vehicle
+from OtusPyBasic.homework_02.exceptions import CargoOverload
 
 
 class Plane(Vehicle):
-    cargo = 100
-    tmp = 0
 
-    def __init__(self, max_cargo, weight, fuel, fuel_consumption):
-        super(Plane, self).__init__(weight, fuel, fuel_consumption)
+    def __init__(self, max_cargo=1000, *args):
+        super(Plane, self).__init__(*args)
         self.max_cargo = max_cargo
+        self.cargo = 100
 
-    def load_cargo(self, i):
-        Plane.tmp = Plane.cargo
-        Plane.cargo += i
-        if self.max_cargo > Plane.cargo:
-            return Plane.cargo
+    def load_cargo(self, cargo_amount):
+        # Plane.tmp = Plane.cargo
+        # Plane.cargo += i
+        if self.max_cargo > self.cargo:
+            return self.cargo + cargo_amount
         else:
-            raise Exception("Cargo exception")
+            raise CargoOverload("Cargo overloaded")
 
-    @staticmethod
-    def remove_cargo():
-        Plane.cargo = Plane.tmp
-        Plane.tmp = 0
-        print(Plane.cargo)
+    def remove_all_cargo(self):
+        tmp = self.cargo
+        self.cargo = 0
+        return tmp
 
     def __str__(self):
         return f'{self.cargo}'
 
 
 if __name__ == '__main__':
-    p1 = Plane(1200, 10000, 100, 10)
-    p1.load_cargo(20)
-    print(p1)
-    p1.remove_cargo()
+    p1 = Plane()
+    p1.load_cargo(cargo_amount=20)
