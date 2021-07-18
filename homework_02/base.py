@@ -40,10 +40,10 @@ class Vehicle(ABC):
         return f'fuel: {self.fuel} ; consumption: {self.fuel_consumption}'
 
 
-if __name__ == '__main__':
+# if __name__ == '__main__':
 
-    v1 = Vehicle()
-    v1.start()
-    print(v1)
-    v1.move(10)
+    # v1 = Vehicle()
+    # v1.start()
+    # print(v1)
+    # v1.move(10)
 

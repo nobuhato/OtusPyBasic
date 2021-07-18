@@ -20,15 +20,3 @@ class Car(Vehicle):
     def set_engine(self, engine: Engine):
         self.engine = engine
         print(f'engine has {self.engine.volume} volume and {self.engine.pistons} pistons')
-
-
-def main():
-    c1 = Car()
-    print(c1)
-
-    engine = Engine(volume=2.0, pistons=4)
-    c1.set_engine(engine)
-
-
-if __name__ == '__main__':
-    main()
