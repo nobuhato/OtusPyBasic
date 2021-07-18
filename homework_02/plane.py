@@ -38,3 +38,4 @@ class Plane(Vehicle):
 if __name__ == '__main__':
     p1 = Plane()
     p1.load_cargo(cargo_amount=20)
+    print(p1.remove_all_cargo())
