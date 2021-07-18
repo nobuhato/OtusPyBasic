@@ -7,10 +7,9 @@
       что достаточно топлива для преодоления переданной дистанции,
       и изменяет количество оставшегося топлива, иначе выкидывает исключение `exceptions.NotEnoughFuel`
 """
-
 from abc import ABC
 
-from OtusPyBasic.homework_02.exceptions import NotEnoughFuel, LowFuelError
+from OtusPyBasic.homework_02.exceptions import LowFuelError, NotEnoughFuel
 
 
 class Vehicle(ABC):
