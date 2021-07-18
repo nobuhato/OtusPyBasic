@@ -14,18 +14,19 @@ from OtusPyBasic.homework_02.exceptions import LowFuelError, NotEnoughFuel
 
 class Vehicle(ABC):
 
-    def __init__(self, weight=10, fuel=1000, fuel_consumption=1):
+    def __init__(self, weight=10, started=False, fuel=1000, fuel_consumption=1):
         self.weight = weight
         self.fuel = fuel
         self.fuel_consumption = fuel_consumption
-        self.started = False
+        self.started = started
 
     def start(self):
-        if self.fuel > 0:
-            self.started = True
-            return self.started
-        else:
-            raise LowFuelError("Low fuel for the distance")
+        if not self.started:
+            if self.fuel > 0:
+                self.started = True
+                return self.started
+            else:
+                raise LowFuelError("Low fuel for the distance")
 
     def move(self, distance):
         possible_distance = float(self.fuel / self.fuel_consumption)
