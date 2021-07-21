@@ -35,6 +35,8 @@ class Plane(Vehicle):
         return f'{self.cargo}'
 
 
+
+
 # if __name__ == '__main__':
 #     p1 = Plane()
 #     p1.load_cargo(cargo_amount=20)

@@ -1,3 +1,4 @@
+from exceptions import BaseException
 """
 Объявите следующие исключения:
 - LowFuelError
@@ -17,3 +18,6 @@ class NotEnoughFuel(BaseException):
 
 class CargoOverload(BaseException):
     pass
+
+
+
