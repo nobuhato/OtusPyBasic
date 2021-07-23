@@ -1,4 +1,4 @@
-from exceptions import BaseException
+
 """
 Объявите следующие исключения:
 - LowFuelError

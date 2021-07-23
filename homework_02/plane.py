@@ -7,8 +7,8 @@
     - объявите метод `load_cargo`, который принимает число, проверяет, что в сумме с текущим `cargo` не будет перегруза, и обновляет значение(какое значение оновляет???), в ином случае выкидывает исключение `exceptions.CargoOverload`
     - объявите метод `remove_all_cargo`, который обнуляет значение `cargo` и возвращает значение `cargo`, которое было до обнуления
 """
-from OtusPyBasic.homework_02.base import Vehicle
-from OtusPyBasic.homework_02.exceptions import CargoOverload
+from homework_02.base import Vehicle
+from homework_02.exceptions import CargoOverload
 
 
 class Plane(Vehicle):
@@ -19,8 +19,6 @@ class Plane(Vehicle):
         self.cargo = 100
 
     def load_cargo(self, cargo_amount):
-        # Plane.tmp = Plane.cargo
-        # Plane.cargo += i
         if self.max_cargo > self.cargo:
             return self.cargo + cargo_amount
         else:
